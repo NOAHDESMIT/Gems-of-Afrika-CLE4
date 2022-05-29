@@ -1,11 +1,9 @@
 
 import * as PIXI from "pixi.js"
-import fishImage from "./images/fish.png"
-import backgroundImage from "./images/background.png"
-import bubblesImage from "./images/bubble.png"
+import backgroundImage from "./images/egyptebg2.png"
+
 import { Fish } from "./fish"
 import { Bubble} from "./bubble"
-
 
 class Game {
 
@@ -14,7 +12,7 @@ class Game {
     fishes: Fish[] = []
     bubbles: Bubble[] = []
 
-// KAAAAAS
+
    
     background = backgroundImage
     
@@ -30,18 +28,18 @@ class Game {
 
     constructor() {
 
-
-        this.pixi = new PIXI.Application({ width: 900, height: 500 })
+            //  ipad resolutie 
+        this.pixi = new PIXI.Application({ width: 1112, height: 834 })
         document.body.appendChild(this.pixi.view)
+
+        
 
 
 
         this.loader = new PIXI.Loader()
         this.loader
         .add("backgroundTexture", backgroundImage)
-        .add('fishTexture', fishImage)
-        .add('bubbleTexture', bubblesImage)
-        
+       
 
 
 
@@ -54,6 +52,8 @@ class Game {
 
         this.background = new PIXI.Sprite(this.loader.resources["backgroundTexture"].texture!)
         this.pixi.stage.addChild(this.background)
+     
+       
 
 
         
