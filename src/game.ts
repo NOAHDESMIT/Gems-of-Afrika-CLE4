@@ -1,47 +1,51 @@
 
 import * as PIXI from "pixi.js"
-import fishImage from "./images/fish.png"
-import backgroundImage from "./images/background.png"
-import bubblesImage from "./images/bubble.png"
-import { Fish } from "./fish"
-import { Bubble} from "./bubble"
+import backgroundImage from "./images/egyptebg2.png"
+import wolk1Image from "./images/wolk1.png"
+import wolk2Image from "./images/wolk2.png"
+import wolk3Image from "./images/wolk3.png"
+
+import { GAMECARD } from "./gameCard"
+import { WOLKEN } from "./wolk"
+import { WOLKEN2 } from "./wolk2"
+import { WOLKEN3 } from "./wolk3"
 
 
 class Game {
 
     pixi: PIXI.Application
     loader: PIXI.Loader
-    fishes: Fish[] = []
-    bubbles: Bubble[] = []
+    gameCardes: GAMECARD
+    wolk: WOLKEN
+    wolk2: WOLKEN2
+    wolk3: WOLKEN3
 
 
-   
+    // background variable 
     background = backgroundImage
-    
 
-
-
-
-
- 
 
 
 
 
     constructor() {
 
-
-        this.pixi = new PIXI.Application({ width: 900, height: 500 })
+        //  ipad resolutie 
+        this.pixi = new PIXI.Application({ width: 1112, height: 834 })
         document.body.appendChild(this.pixi.view)
+
+
 
 
 
         this.loader = new PIXI.Loader()
         this.loader
-        .add("backgroundTexture", backgroundImage)
-        .add('fishTexture', fishImage)
-        .add('bubbleTexture', bubblesImage)
-        
+            // objecten toevoegen 
+            .add("backgroundTexture", backgroundImage)
+            .add('wolkTexture', wolk1Image)
+            .add('wolk2Texture', wolk2Image)
+            .add('wolk3Texture', wolk3Image)
+
 
 
 
@@ -51,46 +55,104 @@ class Game {
 
     doneLoading() {
         console.log("all textures loaded!")
-
+        // Add background to screen 
         this.background = new PIXI.Sprite(this.loader.resources["backgroundTexture"].texture!)
         this.pixi.stage.addChild(this.background)
 
 
-        
+        // animated clouds 
+        // wolk 1  class call
+        this.wolk = new WOLKEN(this.loader.resources["wolkTexture"].texture!)
+        this.pixi.stage.addChild(this.wolk)
 
 
-        for (let i = 0; i < 50; i++) {
-            let lonelyFish = new Fish(this.loader.resources["fishTexture"].texture!)
-            this.pixi.stage.addChild(lonelyFish)
-            this.fishes.push(lonelyFish)
+        // wolk2 class call
+        this.wolk2 = new WOLKEN2(this.loader.resources["wolk2Texture"].texture!)
+        this.pixi.stage.addChild(this.wolk2)
 
-            let manyBubbles = new Bubble(this.loader.resources["bubbleTexture"].texture!)
-            this.pixi.stage.addChild(manyBubbles)
-            this.bubbles.push(manyBubbles)
-
-        }
-
-
-        
+        // wolk3 class call
+        this.wolk3 = new WOLKEN3(this.loader.resources["wolk3Texture"].texture!)
+        this.pixi.stage.addChild(this.wolk3)
 
 
 
 
 
 
-    this.pixi.ticker.add((delta) => this.updateTheStage(delta))
+
+        // rectangle call
+        var graphics = new PIXI.Graphics();
+
+
+
+
+        graphics.beginFill(0xEE4723);
+        graphics.drawRoundedRect(600, 130, 200, 210, 20);
+
+        // (x, y, width, height, radius)
+
+        this.pixi.stage.addChild(graphics);
+        graphics.endFill()
+
+
+
+
+
+        graphics.beginFill(0xC462A5);
+        graphics.drawRoundedRect(600, 400, 200, 210, 20);
+
+        // (x, y, width, height, radius)
+
+        this.pixi.stage.addChild(graphics);
+        graphics.endFill()
+
+
+        graphics.beginFill(0x86B240);
+        graphics.drawRoundedRect(300, 400, 200, 210, 20);
+
+        // (x, y, width, height, radius)
+
+        this.pixi.stage.addChild(graphics);
+        graphics.endFill()
+
+
+
+
+        let gameCardes = new GAMECARD()
+
+        this.pixi.stage.addChild(gameCardes)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        this.pixi.ticker.add((delta) => this.updateTheStage(delta))
 
     }
 
     updateTheStage(delta: number) {
+        // calling animated cloud 
+        this.wolk.update(delta)
+        this.wolk2.update(delta)
+        this.wolk3.update(delta)
 
-        
-        console.log(`Dit is de Game Loop!`)
-        for(let myfish of this.fishes){
-            myfish.swim()
-        }
+
+
+
 
     }
+
+
 }
 
 new Game()

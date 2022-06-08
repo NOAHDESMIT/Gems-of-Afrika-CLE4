@@ -516,26 +516,23 @@ function hmrAcceptRun(bundle, id) {
 },{}],"edeGs":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _pixiJs = require("pixi.js");
-var _fishPng = require("./images/fish.png");
-var _fishPngDefault = parcelHelpers.interopDefault(_fishPng);
-var _backgroundPng = require("./images/background.png");
-var _backgroundPngDefault = parcelHelpers.interopDefault(_backgroundPng);
-var _bubblePng = require("./images/bubble.png");
-var _bubblePngDefault = parcelHelpers.interopDefault(_bubblePng);
+var _egyptebg2Png = require("./images/egyptebg2.png");
+var _egyptebg2PngDefault = parcelHelpers.interopDefault(_egyptebg2Png);
 var _fish = require("./fish");
 var _bubble = require("./bubble");
 class Game {
     fishes = [];
     bubbles = [];
-    background = _backgroundPngDefault.default;
+    background = _egyptebg2PngDefault.default;
     constructor(){
+        //  ipad resolutie 
         this.pixi = new _pixiJs.Application({
-            width: 900,
-            height: 500
+            width: 1112,
+            height: 834
         });
         document.body.appendChild(this.pixi.view);
         this.loader = new _pixiJs.Loader();
-        this.loader.add("backgroundTexture", _backgroundPngDefault.default).add('fishTexture', _fishPngDefault.default).add('bubbleTexture', _bubblePngDefault.default);
+        this.loader.add("backgroundTexture", _egyptebg2PngDefault.default);
         this.loader.load(()=>this.doneLoading()
         );
     }
@@ -561,7 +558,7 @@ class Game {
 }
 new Game();
 
-},{"pixi.js":"dsYej","./images/fish.png":"3tLwD","./images/background.png":"fwQMR","./images/bubble.png":"iMP3P","./fish":"eMzUh","./bubble":"iOWvL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dsYej":[function(require,module,exports) {
+},{"pixi.js":"dsYej","./fish":"eMzUh","./bubble":"iOWvL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./images/egyptebg2.png":"aPMz0"}],"dsYej":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "utils", ()=>_utils
@@ -37058,50 +37055,7 @@ function __extends(d, b) {
     return AnimatedSprite1;
 }(_sprite.Sprite);
 
-},{"@pixi/core":"7PEF8","@pixi/sprite":"9mbxh","@pixi/ticker":"8ekG7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3tLwD":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('emE5o') + "fish.510b053c.png" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"fwQMR":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('emE5o') + "background.84053517.png" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"iMP3P":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('emE5o') + "bubble.56ab0ad6.png" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"eMzUh":[function(require,module,exports) {
+},{"@pixi/core":"7PEF8","@pixi/sprite":"9mbxh","@pixi/ticker":"8ekG7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eMzUh":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Fish", ()=>Fish
@@ -37161,6 +37115,43 @@ class Bubble extends _pixiJs.Sprite {
     }
 }
 
-},{"pixi.js":"dsYej","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["fpRtI","edeGs"], "edeGs", "parcelRequirea0e5")
+},{"pixi.js":"dsYej","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aPMz0":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('emE5o') + "egyptebg2.3ba7d3a5.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}]},["fpRtI","edeGs"], "edeGs", "parcelRequirea0e5")
 
 //# sourceMappingURL=index.901f85c2.js.map
