@@ -24,7 +24,7 @@ class Game {
     // background variable 
     background = backgroundImage
 
-
+// Nieuwe branche 
 
 
 
