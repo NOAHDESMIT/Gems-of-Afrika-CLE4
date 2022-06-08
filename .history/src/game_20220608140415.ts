@@ -60,8 +60,8 @@ class Game {
         this.pixi.stage.addChild(this.wolk3)
 
         
-        let soundtrack = this.loader.resources["egypteBgAudio"].data!
-        soundtrack.play()
+let soundtrack = this.loader.resources["egypteBgAudio"].data!
+soundtrack.play()
 
         // rectangle call
         var graphics = new PIXI.Graphics();
