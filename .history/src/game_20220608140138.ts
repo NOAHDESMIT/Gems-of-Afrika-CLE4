@@ -94,7 +94,14 @@ class Game {
         this.wolk.update(delta)
         this.wolk2.update(delta)
         this.wolk3.update(delta)
+
+
+
+
+
     }
+
+
 }
 
 new Game()

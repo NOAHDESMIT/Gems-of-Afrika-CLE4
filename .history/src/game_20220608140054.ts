@@ -21,10 +21,15 @@ class Game {
     wolk: WOLKEN
     wolk2: WOLKEN2
     wolk3: WOLKEN3
+
+
     // background variable 
     background = backgroundImage
 
 // Nieuwe branche 
+
+
+
     constructor() {
         //  ipad resolutie 
         this.pixi = new PIXI.Application({ width: 1112, height: 834 })
@@ -46,10 +51,12 @@ class Game {
         this.background = new PIXI.Sprite(this.loader.resources["backgroundTexture"].texture!)
         this.pixi.stage.addChild(this.background)
 
+
         // animated clouds 
         // wolk 1  class call
         this.wolk = new WOLKEN(this.loader.resources["wolkTexture"].texture!)
         this.pixi.stage.addChild(this.wolk)
+
 
         // wolk2 class call
         this.wolk2 = new WOLKEN2(this.loader.resources["wolk2Texture"].texture!)
@@ -59,34 +66,70 @@ class Game {
         this.wolk3 = new WOLKEN3(this.loader.resources["wolk3Texture"].texture!)
         this.pixi.stage.addChild(this.wolk3)
 
+
+
+
+
+
+
         // rectangle call
         var graphics = new PIXI.Graphics();
+
+
+
 
         graphics.beginFill(0xEE4723);
         graphics.drawRoundedRect(600, 130, 200, 210, 20);
 
         // (x, y, width, height, radius)
+
         this.pixi.stage.addChild(graphics);
         graphics.endFill()
+
+
+
+
 
         graphics.beginFill(0xC462A5);
         graphics.drawRoundedRect(600, 400, 200, 210, 20);
 
         // (x, y, width, height, radius)
+
         this.pixi.stage.addChild(graphics);
         graphics.endFill()
+
 
         graphics.beginFill(0x86B240);
         graphics.drawRoundedRect(300, 400, 200, 210, 20);
 
         // (x, y, width, height, radius)
+
         this.pixi.stage.addChild(graphics);
         graphics.endFill()
 
+
+
+
         let gameCardes = new GAMECARD()
+
         this.pixi.stage.addChild(gameCardes)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         this.pixi.ticker.add((delta) => this.updateTheStage(delta))
+
     }
 
     updateTheStage(delta: number) {
@@ -94,7 +137,14 @@ class Game {
         this.wolk.update(delta)
         this.wolk2.update(delta)
         this.wolk3.update(delta)
+
+
+
+
+
     }
+
+
 }
 
 new Game()

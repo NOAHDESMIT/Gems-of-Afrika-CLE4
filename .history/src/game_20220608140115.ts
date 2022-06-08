@@ -69,24 +69,50 @@ class Game {
         this.pixi.stage.addChild(graphics);
         graphics.endFill()
 
+
+
+
+
         graphics.beginFill(0xC462A5);
         graphics.drawRoundedRect(600, 400, 200, 210, 20);
 
         // (x, y, width, height, radius)
+
         this.pixi.stage.addChild(graphics);
         graphics.endFill()
+
 
         graphics.beginFill(0x86B240);
         graphics.drawRoundedRect(300, 400, 200, 210, 20);
 
         // (x, y, width, height, radius)
+
         this.pixi.stage.addChild(graphics);
         graphics.endFill()
 
+
+
+
         let gameCardes = new GAMECARD()
+
         this.pixi.stage.addChild(gameCardes)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         this.pixi.ticker.add((delta) => this.updateTheStage(delta))
+
     }
 
     updateTheStage(delta: number) {
@@ -94,7 +120,14 @@ class Game {
         this.wolk.update(delta)
         this.wolk2.update(delta)
         this.wolk3.update(delta)
+
+
+
+
+
     }
+
+
 }
 
 new Game()
