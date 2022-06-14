@@ -5,7 +5,10 @@ import wolk1Image from "./images/wolk1.png"
 import wolk2Image from "./images/wolk2.png"
 import wolk3Image from "./images/wolk3.png"
 
-import soundTrackEgypt from "url:./audio/soundtrack-ancient-egypt.mp3"
+
+
+
+// import soundTrackEgypt from "url:./audio/soundtrack-ancient-egypt.mp3"
 
 import { GAMECARD } from "./gameCard"
 import { WOLKEN } from "./wolk"
@@ -21,10 +24,17 @@ class Game {
     wolk: WOLKEN
     wolk2: WOLKEN2
     wolk3: WOLKEN3
+
+
+
     // background variable 
     background = backgroundImage
 
-// Nieuwe branche 
+
+
+    // Nieuwe branche
+
+
     constructor() {
         //  ipad resolutie 
         this.pixi = new PIXI.Application({ width: 1112, height: 834 })
@@ -36,7 +46,7 @@ class Game {
             .add('wolkTexture', wolk1Image)
             .add('wolk2Texture', wolk2Image)
             .add('wolk3Texture', wolk3Image)
-            .add('egypteBgAudio', soundTrackEgypt)
+            // .add('egypteBgAudio', soundTrackEgypt)
         this.loader.load(() => this.doneLoading())
     }
 
@@ -60,8 +70,8 @@ class Game {
         this.pixi.stage.addChild(this.wolk3)
 
         
-        let soundtrack = this.loader.resources["egypteBgAudio"].data!
-        soundtrack.play()
+        // let soundtrack = this.loader.resources["egypteBgAudio"].data!
+        // soundtrack.play()
 
         // rectangle call
         var graphics = new PIXI.Graphics();
@@ -89,16 +99,35 @@ class Game {
 
         let gameCardes = new GAMECARD()
         this.pixi.stage.addChild(gameCardes)
-
         this.pixi.ticker.add((delta) => this.updateTheStage(delta))
     }
-
     updateTheStage(delta: number) {
         // calling animated cloud 
         this.wolk.update(delta)
         this.wolk2.update(delta)
         this.wolk3.update(delta)
+
     }
 }
 
 new Game()
+
+
+
+
+
+  // simon says voorbeeld
+
+
+
+
+
+
+
+
+
+
+
+
+
+

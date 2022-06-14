@@ -14,9 +14,6 @@ export class WOLKEN extends PIXI.Sprite {
 
 
 
-
-
-
     }
 
 
