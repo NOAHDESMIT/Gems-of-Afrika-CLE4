@@ -544,7 +544,6 @@ class Game {
     ];
     // background variable 
     background = _egyptebg2PngDefault.default;
-    // Nieuwe branche
     constructor(){
         //  ipad resolutie 
         this.pixi = new _pixiJs.Application({
@@ -599,7 +598,7 @@ class Game {
 new Game() // simon says voorbeeld
 ;
 
-},{"pixi.js":"dsYej","./images/egyptebg2.png":"aPMz0","./images/wolk1.png":"S1TID","./images/wolk2.png":"cN9D1","./images/wolk3.png":"50Jto","./gameCard":"fdN0z","./wolk":"k86Nr","./wolk2":"bfXrR","./wolk3":"3GDTR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./gameCard2":"h7CrD","./gameCard3":"jq0Nw","./gameCard4":"j749v"}],"dsYej":[function(require,module,exports) {
+},{"pixi.js":"dsYej","./images/egyptebg2.png":"aPMz0","./images/wolk1.png":"S1TID","./images/wolk2.png":"cN9D1","./images/wolk3.png":"50Jto","./gameCard":"fdN0z","./gameCard2":"h7CrD","./gameCard3":"jq0Nw","./gameCard4":"j749v","./wolk":"k86Nr","./wolk2":"bfXrR","./wolk3":"3GDTR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dsYej":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "utils", ()=>_utils
@@ -37172,70 +37171,6 @@ class GAMECARD extends _pixiJs.Graphics {
     }
 }
 
-},{"pixi.js":"dsYej","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"k86Nr":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "WOLKEN", ()=>WOLKEN
-);
-var _pixiJs = require("pixi.js");
-class WOLKEN extends _pixiJs.Sprite {
-    constructor(texture){
-        super(texture);
-        this.x = 400;
-        this.speed = 0.1;
-        this.y = -50;
-        this.scale.set(1);
-    }
-    update(delta) {
-        // cloud moving speed
-        this.x -= this.speed;
-        // Get cloud back to the  beginning of the screen
-        if (this.x <= -1000) this.x = 400;
-    }
-}
-
-},{"pixi.js":"dsYej","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bfXrR":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "WOLKEN2", ()=>WOLKEN2
-);
-var _pixiJs = require("pixi.js");
-class WOLKEN2 extends _pixiJs.Sprite {
-    constructor(texture){
-        super(texture);
-        this.x = 40;
-        this.speed = 0.1;
-        this.y = 100;
-        this.scale.set(0.8);
-    }
-    update(delta) {
-        this.x -= this.speed;
-        // Get cloud back to the  beginning of the screen
-        if (this.x <= -1000) this.x = 400;
-    }
-}
-
-},{"pixi.js":"dsYej","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3GDTR":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "WOLKEN3", ()=>WOLKEN3
-);
-var _pixiJs = require("pixi.js");
-class WOLKEN3 extends _pixiJs.Sprite {
-    constructor(texture){
-        super(texture);
-        this.x = 20;
-        this.speed = Math.random() * 0.2;
-        this.y = 301;
-        this.scale.set(0.4);
-    }
-    update(delta) {
-        this.x -= this.speed;
-        // Get cloud back to the  beginning of the screen
-        if (this.x <= -700) this.x = 1100;
-    }
-}
-
 },{"pixi.js":"dsYej","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"h7CrD":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -37317,6 +37252,70 @@ class GAMECARD4 extends _pixiJs.Graphics {
         this.rotation = 0;
         this.tint = 3355443;
     // this.scale.x *= 1.25;
+    }
+}
+
+},{"pixi.js":"dsYej","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"k86Nr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "WOLKEN", ()=>WOLKEN
+);
+var _pixiJs = require("pixi.js");
+class WOLKEN extends _pixiJs.Sprite {
+    constructor(texture){
+        super(texture);
+        this.x = 400;
+        this.speed = 0.1;
+        this.y = -50;
+        this.scale.set(1);
+    }
+    update(delta) {
+        // cloud moving speed
+        this.x -= this.speed;
+        // Get cloud back to the  beginning of the screen
+        if (this.x <= -1000) this.x = 400;
+    }
+}
+
+},{"pixi.js":"dsYej","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bfXrR":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "WOLKEN2", ()=>WOLKEN2
+);
+var _pixiJs = require("pixi.js");
+class WOLKEN2 extends _pixiJs.Sprite {
+    constructor(texture){
+        super(texture);
+        this.x = 40;
+        this.speed = 0.1;
+        this.y = 100;
+        this.scale.set(0.8);
+    }
+    update(delta) {
+        this.x -= this.speed;
+        // Get cloud back to the  beginning of the screen
+        if (this.x <= -1000) this.x = 400;
+    }
+}
+
+},{"pixi.js":"dsYej","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3GDTR":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "WOLKEN3", ()=>WOLKEN3
+);
+var _pixiJs = require("pixi.js");
+class WOLKEN3 extends _pixiJs.Sprite {
+    constructor(texture){
+        super(texture);
+        this.x = 20;
+        this.speed = Math.random() * 0.2;
+        this.y = 301;
+        this.scale.set(0.4);
+    }
+    update(delta) {
+        this.x -= this.speed;
+        // Get cloud back to the  beginning of the screen
+        if (this.x <= -700) this.x = 1100;
     }
 }
 
